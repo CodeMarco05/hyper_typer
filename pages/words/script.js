@@ -9,6 +9,7 @@ window.onload = async function () {
     for (let i = 0; i < words.length; i++) {
         string = string.concat(' ', words[i]); // Use += to concatenate strings
     }
+    
     display.textContent = string
 
     console.log("finished");
