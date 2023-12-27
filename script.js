@@ -1,10 +1,10 @@
 function sentences(){
-    window.location.href = "./pages/sentences.html"
+    window.location.href = "./pages/sentences/sentences.html"
 }
 function words(){
-    window.location.href = "./pages/words.html"
+    window.location.href = "./pages/words/words.html"
 }
 function statistic(){
-    window.location.href = "./pages/statistic.html"
-    
+    window.location.href = "./pages/statistic/statistic.html"
+
 }

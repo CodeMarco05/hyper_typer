@@ -19,7 +19,7 @@ body{
     justify-content: space-between;
     max-width: 30%;
     padding: 10px;
-    border: 2px black solid;
+    border: 4px cadetblue solid;
     border-radius: 10px;
     margin: 0 auto;
 
@@ -27,25 +27,34 @@ body{
 
 .flex-item {
     width: 200px;
-    height: 50px;
+    height: 70px;
     border: 2px black solid;
-    border-radius: 10px;
+    border-radius: 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: cadetblue;
+    border-color:darkcyan;
+    font-size: 30px;
+    font-style:oblique;
     
 }
 
 #statistic{
-    margin-top: 30px;
-    width: 140px;
+    margin-top: 50px;
+    width: 240px;
     border: 2px black solid;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 100px;
+
+    background-color: cadetblue;
+    border-color:darkcyan;
+    font-size: 30px;
+    font-style:oblique;
 }
 
