@@ -2,6 +2,7 @@ body{
     background-image: url(./assets/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 
 #heading{
@@ -17,7 +18,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 30%;
+    max-width: 500px;
     padding: 10px;
     border: 4px cadetblue solid;
     border-radius: 10px;
