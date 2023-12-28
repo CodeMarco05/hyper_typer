@@ -2,6 +2,19 @@
 let inputField = document.getElementById('inputField')
 
 let words;
+let testStarted = false
+
+
+
+function startTime(){
+    if(testStarted = false){
+        testStarted = true
+        
+    }
+}
+document.addEventListener('keydown', startTime)
+
+
 
 inputField.addEventListener('input', async function () { //handles every change in the textfield 
     let inputValue = inputField.value;
@@ -69,7 +82,15 @@ window.onload = async function () {
     }
 
     display.textContent = string
+
+    loadTimer()
+
     console.log("Finished Loading")
+}
+
+function loadTimer(){
+    let timer = document.getElementById('timer')
+    timer.textContent = 'Zeit: 60s'
 }
 
 async function getRandomWords(amount) {

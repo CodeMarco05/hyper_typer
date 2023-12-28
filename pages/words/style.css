@@ -12,10 +12,19 @@ body{
     color: black;
     padding: 10px;
     font-size: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
     margin: 20px;
 }
 
 #inputField{
     width: calc(100% - 60px);
+    font-size: 50px;
+}
 
+#timer{
+    font-size: 80px;
+    font-family: 'Luckiest Guy', cursive;
 }
