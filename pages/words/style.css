@@ -19,6 +19,13 @@ body{
     margin: 20px;
 }
 
+#wordDisplay{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 #inputField{
     width: calc(100% - 60px);
     font-size: 50px;
@@ -27,4 +34,22 @@ body{
 #timer{
     font-size: 80px;
     font-family: 'Luckiest Guy', cursive;
+    margin-top: 12%;
+}
+
+.button{
+    width: 200px;
+    height: 70px;
+    border: 2px black solid;
+    border-radius: 20px;
+
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: cadetblue;
+    border-color:darkcyan;
+    font-size: 30px;
+    font-family: 'Luckiest Guy', cursive; 
 }

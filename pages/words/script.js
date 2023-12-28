@@ -4,17 +4,41 @@ let inputField = document.getElementById('inputField')
 let words;
 let testStarted = false
 
+let writtenWords = 0;
 
 
-function startTime(){
-    if(testStarted = false){
+function startTime() {
+    if (testStarted == false) {
+        seconds = 60
+        timerFn()
         testStarted = true
-        
     }
 }
 document.addEventListener('keydown', startTime)
 
+let seconds = 60
+function timerFn() {
+    updateUI(seconds)
+    seconds--;
 
+
+    if (seconds >= 0) {
+        setTimeout(timerFn, 1000)
+    } else {
+        //disable the input
+        document.getElementById('inputField').disabled = true
+        //Make so all the stats are loaded
+    }
+}
+
+function updateUI(seconds) {
+    let time = document.getElementById('timer')
+    time.textContent = `Zeit: ${seconds}`
+}
+
+function resetFn() {
+    location.reload()
+}
 
 inputField.addEventListener('input', async function () { //handles every change in the textfield 
     let inputValue = inputField.value;
@@ -22,9 +46,15 @@ inputField.addEventListener('input', async function () { //handles every change 
         let validWord = checkValid(inputValue)
         if (validWord) {
             await updateScreen()
+            updateWordsCounter()
         }
     }
 })
+
+function updateWordsCounter(){
+    writtenWords++
+    console.log(writtenWords)
+}
 
 async function updateScreen() {
     words.shift();
@@ -88,7 +118,7 @@ window.onload = async function () {
     console.log("Finished Loading")
 }
 
-function loadTimer(){
+function loadTimer() {
     let timer = document.getElementById('timer')
     timer.textContent = 'Zeit: 60s'
 }
