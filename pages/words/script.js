@@ -72,7 +72,7 @@ async function updateScreen() {
         let data = await response.json();
 
         // Implement logic for loading random words
-        await words.push(data.words[getRandomNumber(0, data.words.length)]);
+        await words.push(data.words[getRandomNumber(0, data.words.length - 1)]);
     } catch (error) {
         // Handle errors
         console.error('Error loading JSON:', error);
@@ -141,7 +141,7 @@ async function getRandomWords(amount) {
 
         // Implement logic for loading random words
         for (let i = 0; i < amount; i++) {
-            words.push(data.words[getRandomNumber(0, data.words.length)]);
+            words.push(data.words[getRandomNumber(0, data.words.length - 1)]);
         }
     } catch (error) {
         // Handle errors
