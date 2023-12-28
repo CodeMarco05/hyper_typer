@@ -6,5 +6,6 @@ function words(){
 }
 function statistic(){
     window.location.href = "./pages/statistic/statistic.html"
-
 }
+
+//dazu da, um auf neue Seite zu gelangen 
