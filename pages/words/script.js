@@ -14,6 +14,7 @@ function startTime() {
         testStarted = true
     }
 }
+//(Interruptt) sobald User was eingibt
 document.addEventListener('keydown', startTime)
 
 let seconds = 60
@@ -23,9 +24,10 @@ function timerFn() {
 
 
     if (seconds >= 0) {
+        //Methode wird aufgerufen (ist vorgefertigte Methode), timerFn wird mit einer Sek Verzoegerung aufgerufen
         setTimeout(timerFn, 1000)
     } else {
-        //disable the input
+        //verhindert den naechsten Input (kann nichts mehr eingeben)
         document.getElementById('inputField').disabled = true
         //Make so all the stats are loaded
     }
@@ -42,8 +44,8 @@ function resetFn() {
 
 inputField.addEventListener('input', async function () { //handles every change in the textfield 
     let inputValue = inputField.value;
-    if (inputValue[inputValue.length - 1] == ' ') {
-        let validWord = checkValid(inputValue)
+    if (inputValue[inputValue.length - 1] == ' ') { //prueft am Ende des Inputs auf Leerzeichen
+        let validWord = checkValid(inputValue)  //ist boolean, prueft ob man richtiges Wort eingegeben hat
         if (validWord) {
             await updateScreen()
             updateWordsCounter()
@@ -57,22 +59,28 @@ function updateWordsCounter(){
 }
 
 async function updateScreen() {
-    words.shift();
-    let jsonFilePath = "../../data.json";
+    //Array wird geshiftet, erstes Element faellt raus
+    words.shift()
+    //in Variable wird Pfad reingespeichert
+    let jsonFilePath = "../../data.json"
 
     try {
-        let response = await fetch(jsonFilePath);
+        //in Variable response wird die json Datei geladen
+        let response = await fetch(jsonFilePath)
 
         // Check if the request was successful (status code 200)
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`HTTP error! Status: ${response.status}`)
         }
 
         // Parse the JSON response
-        let data = await response.json();
+        let data = await response.json()
+
+        let randomIndex = getRandomNumber(0, data.words.length - 1)
+        await words.push(data.words[randomIndex])
 
         // Implement logic for loading random words
-        await words.push(data.words[getRandomNumber(0, data.words.length - 1)]);
+        //await words.push(data.words[getRandomNumber(0, data.words.length - 1)])
     } catch (error) {
         // Handle errors
         console.error('Error loading JSON:', error);

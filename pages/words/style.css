@@ -27,7 +27,7 @@ body{
 }
 
 #inputField{
-    width: calc(100% - 60px);
+    width: calc(100% - 65px);
     font-size: 50px;
 }
 
