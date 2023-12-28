@@ -86,12 +86,13 @@ async function updateScreen() {
     let string = ''
     words = Array.from(words)
     for (let i = 0; i < words.length; i++) {
-        string = string.concat(' ', words[i]); // Use += to concatenate strings
+        string = string.concat(words[i], ' '); // Use = to concatenate strings
     }
     display.textContent = string
 }
 
 function checkValid(input) {
+    //trim macht fuehrende/nachvolgende Leerzeichen weg
     if (input.trim() == words[0]) {
         return true
     }
@@ -99,7 +100,9 @@ function checkValid(input) {
 }
 
 //this funcition is called when the html document is loaded
+//Methode wird aufgerufen sobald html Dok geladen wird
 window.onload = async function () {
+    //holt aus json liste woerter raus und speichert in 'words' array
     words = await getRandomWords(8);  //gets random 20 words -> await because it is asynchronous code
 
     let display = document.getElementById('wordDisplay');
@@ -108,16 +111,15 @@ window.onload = async function () {
     words = Array.from(words)
 
     for (let i = 0; i < words.length; i++) {
-        string = string.concat(' ', words[i]); // Use += to concatenate strings
+        string = string.concat(words[i], ' '); // Use = to concatenate strings
     }
-
+    //Setzen Text -> durchgegangene Woerter
     display.textContent = string
 
     loadTimer()
-
-    console.log("Finished Loading")
 }
 
+//setzt Text -> timer
 function loadTimer() {
     let timer = document.getElementById('timer')
     timer.textContent = 'Zeit: 60s'
@@ -125,10 +127,11 @@ function loadTimer() {
 
 async function getRandomWords(amount) {
     let words = [];
-
+    //Verzeichnis zurueck, zurueck, dann json file
     let jsonFilePath = "../../data.json";
 
     try {
+        //oeffnet data.json datei
         let response = await fetch(jsonFilePath);
 
         // Check if the request was successful (status code 200)
@@ -137,7 +140,8 @@ async function getRandomWords(amount) {
         }
 
         // Parse the JSON response
-        let data = await response.json();
+        //wandelt Variable so um, damit man mithilfe dieser Variable 
+        let data = await response.json()
 
         // Implement logic for loading random words
         for (let i = 0; i < amount; i++) {
