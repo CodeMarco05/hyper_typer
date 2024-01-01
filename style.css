@@ -10,8 +10,8 @@ body{
     font-weight: bolder;
     font-size: 150px;
     margin: 0 auto;
-    padding-top: 20%;
-    color: cadetblue;
+    padding-top: 200px;
+    color:black;
 }
 
 #flex-container {
@@ -20,42 +20,27 @@ body{
     justify-content: space-between;
     max-width: 500px;
     padding: 10px;
-    border: 4px cadetblue solid;
+    border: 4px ;
     border-radius: 10px;
     margin: 0 auto;
 
 }
 /*merhmals verwendar bei Klassen*/
-.flex-item {
+.start {
     width: 200px;
     height: 70px;
     border: 2px black solid;
     border-radius: 20px;
-
+    margin-top: 350px;
     display: flex;
+    font-family: 'Luckiest Guy', cursive;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: cadetblue;
-    border-color:darkcyan;
-    font-size: 30px;
+    border-color: black;
+    font-size: 35px;
     font-style:oblique;
     
 }
 
-#statistic{
-    margin-top: 50px;
-    width: 240px;
-    border: 2px black solid;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-
-    background-color: cadetblue;
-    border-color:darkcyan;
-    font-size: 30px;
-    font-style:oblique;
-}
 

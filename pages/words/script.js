@@ -53,8 +53,10 @@ inputField.addEventListener('input', async function () { //handles every change 
     }
 })
 
+
 function updateWordsCounter(){
     writtenWords++
+    document.getElementById('wordCounter').textContent = `Written words: ${writtenWords}`
     console.log(writtenWords)
 }
 
